@@ -1,31 +1,34 @@
 import Cell from "./Cell";
 
-describe("Given the class cell propertie", () => {
+describe("Given the method die", () => {
   describe("When the cell it receive false", () => {
     test("Then it should return false", () => {
-      const expectedState = false;
+      const cell = new Cell(false);
+      cell.die();
 
-      const stateCell = new Cell(false);
+      const cellState = cell.state();
 
-      expect(stateCell.isAlive).toBe(expectedState);
+      expect(cellState).toBe(false);
     });
   });
   describe("When the cell it receive true", () => {
     test("Then it should return true", () => {
-      const expectedState = true;
+      const cell = new Cell(true);
+      cell.live();
 
-      const stateCell = new Cell(true);
+      const cellState = cell.state();
 
-      expect(stateCell.isAlive).toBe(expectedState);
+      expect(cellState).toBe(true);
     });
   });
-  describe("When the cell it reciev true", () => {
-    test("Then it should return true", () => {
-      const expectedState = false;
+  describe("When the cell it receive false", () => {
+    test("Then it should return false", () => {
+      const cell = new Cell(false);
+      cell.die();
 
-      const stateCell = new Cell(true);
+      const cellState = cell.state();
 
-      expect(stateCell.isAlive).tobe(expectedState);
+      expect(cellState).toBe(true);
     });
   });
 });
