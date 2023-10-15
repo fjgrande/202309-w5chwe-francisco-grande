@@ -1,4 +1,4 @@
-import Cell from "../CellMother/CellMother.js";
+import Cell from "../Cell/Cell.js";
 
 class World {
   cell;
@@ -7,9 +7,9 @@ class World {
     this.cell = [];
   }
 
-  initWorld(length, isAlive, ...element) {
+  initBoard(length, isAlive) {
     for (let indexRow = 0; indexRow < length; indexRow++) {
-      this.cell[indexRow] = element;
+      this.cell[indexRow] = [];
       for (let indexColum = 0; indexColum < length; indexColum++) {
         this.cell[indexRow][indexColum] = new Cell(isAlive);
       }

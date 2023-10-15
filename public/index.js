@@ -1,7 +1,8 @@
-import Cell from "./CellMother/CellMother.js";
 import World from "./World/World.js";
 
-const cell = new Cell(false);
-const grid = new World(cell);
+const board = new World();
 
-console.log();
+board.initBoard(3, false);
+board.cell[1][2].live();
+
+console.log(board);
